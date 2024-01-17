@@ -146,6 +146,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@skynexui/responsive_stylesheet@^1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@skynexui/responsive_stylesheet/-/responsive_stylesheet-1.11.0.tgz#961588a68e0de23cb93b9ac24cc7fa5a190e4e1c"
+  integrity sha512-ey9MiHXjXABsFKB7pbnzgWgVGXBkvwhWzlYBfUDjiAdnX8GoKOPf0SqdVBvswMFftE+0TWIaGoSfJk0gbxH8YA==
+
 "@swc/helpers@0.5.2":
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.2.tgz#85ea0c76450b61ad7d10a37050289eded783c27d"
