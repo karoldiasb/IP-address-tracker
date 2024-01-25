@@ -1,6 +1,6 @@
 import { TitleProps } from './types';
-import { Box } from '..';
+import { Text } from '..';
 
-export default function Title({ text }: TitleProps) {
-  return <Box tag="h1">{text}</Box>;
+export default function Title({ text, ...props }: TitleProps) {
+  return <Text tag="h1" {...props}>{text}</Text>;
 }
