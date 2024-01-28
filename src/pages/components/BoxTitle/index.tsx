@@ -9,7 +9,7 @@ export default function BoxTitle({ mainTitle, secondaryTitle }: BoxTitleProps) {
         gap: '10px',
         maxWidth: '170px',
         paddingRight: '20px',
-        paddingLeft: '15px'
+        paddingLeft: '15px',
       }}
     >
       <Text
@@ -17,7 +17,7 @@ export default function BoxTitle({ mainTitle, secondaryTitle }: BoxTitleProps) {
           color: 'grey',
           fontSize: '10px',
           fontWeight: 500,
-          textTransform: 'uppercase'
+          textTransform: 'uppercase',
         }}
       >
         {mainTitle}
