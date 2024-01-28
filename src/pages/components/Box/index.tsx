@@ -5,7 +5,7 @@ export default function Box({ tag, styleSheet, children, ...props }: BoxProps) {
   const Tag = tag || 'div';
 
   return (
-    <BaseComponent as={Tag} styleSheet={styleSheet} {...props}>
+    <BaseComponent as={Tag} $styleSheet={styleSheet} {...props}>
       {children}
     </BaseComponent>
   );
