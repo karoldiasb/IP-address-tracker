@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import Box from './components/Box';
-import { Footer, Header, AddressDetails, Map } from './components';
+import { Footer } from '../components';
 import 'leaflet/dist/leaflet.css';
 import HomePage from './HomePage';
 

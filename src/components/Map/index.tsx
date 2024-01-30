@@ -1,6 +1,6 @@
 import 'leaflet/dist/leaflet.css';
-import 'leaflet-defaulticon-compatibility';
-import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
+// import 'leaflet-defaulticon-compatibility'; //TODO: resolver carregamento
+// import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'; //TODO: resolver carregamento
 import dynamic from 'next/dynamic';
 import { LatLngExpression } from 'leaflet';
 

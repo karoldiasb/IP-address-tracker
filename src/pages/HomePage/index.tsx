@@ -1,4 +1,4 @@
-import { AddressDetails, Box, Header, Map } from '../components';
+import { AddressDetails, Box, Header, Map } from '../../components';
 
 export default function HomePage() {
   return (
