@@ -8,6 +8,9 @@ import BoxTitle from './BoxTitle';
 import Divider from './Divider';
 import AddressDetails from './AddressDetails';
 import Map from './Map';
+import ButtonSearch from './ButtonSearch';
+import BoxMessage from './BoxMessage';
+import Button from './Button';
 
 export {
   Box,
@@ -20,4 +23,7 @@ export {
   Divider,
   AddressDetails,
   Map,
+  ButtonSearch,
+  BoxMessage,
+  Button,
 };

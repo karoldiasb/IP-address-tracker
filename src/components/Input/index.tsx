@@ -1,22 +1,21 @@
 import theme from '@src/theme/theme';
 import { InputProps } from './types';
 
-export default function Input({ type, placeholder }: InputProps) {
+export default function Input({ ...props }: InputProps) {
   return (
     <input
-      type={type}
-      placeholder={placeholder}
       style={{
         width: '500px',
         height: '60px',
-        backgroundColor: 'white',
-        color: 'black',
+        backgroundColor: theme.colors.white,
+        color: theme.colors.black[500],
         borderRadius: '15px 0px 0px 15px',
         fontFamily: theme.typography.fontFamily,
         fontSize: '18px',
         paddingLeft: '20px',
         outline: 'none',
       }}
+      {...props}
     ></input>
   );
 }

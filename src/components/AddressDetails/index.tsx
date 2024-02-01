@@ -1,6 +1,7 @@
 import { infosAddressMock } from '@src/pages/mocks/infosAddressMock';
 import { Fragment } from 'react';
 import { Box, BoxTitle, Divider } from '..';
+import theme from '@src/theme/theme';
 
 export default function AddressDetails() {
   return (
@@ -8,7 +9,7 @@ export default function AddressDetails() {
       styleSheet={{
         height: '140px',
         minWidth: '700px',
-        background: 'white',
+        background: theme.colors.white,
         position: 'absolute',
         top: '200px',
         display: 'flex',
@@ -17,7 +18,7 @@ export default function AddressDetails() {
         paddingTop: '30px',
         paddingLeft: '10px',
         gap: '10px',
-        zIndex: 1000,
+        zIndex: 999,
       }}
     >
       {infosAddressMock.map((info, index) => {
