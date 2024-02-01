@@ -1,42 +1,47 @@
-import Image from 'next/image';
-import { Box, Input, Title } from '..';
-import IconArrow from '@src/assets/icon-arrow.svg';
+import theme from '@src/theme/theme';
+import { Box, BoxMessage, ButtonSearch, Input, Title } from '..';
+import { useHeaderState } from './hooks/useHeaderState';
 
 export default function Header() {
+  const state = useHeaderState();
+
   return (
-    <Box
-      styleSheet={{
-        backgroundImage: `url(/pattern-bg-desktop.png)`,
-        backgroundSize: '100% 274px',
-        backgroundRepeat: 'no-repeat',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        paddingTop: '5vh',
-      }}
-    >
-      <Title text="IP Address Tracker" styleSheet={{ color: 'white' }} />
+    <>
       <Box
         styleSheet={{
+          backgroundImage: `url(/pattern-bg-desktop.png)`,
+          backgroundSize: '100% 274px',
+          backgroundRepeat: 'no-repeat',
           display: 'flex',
-          marginTop: '10px',
+          flexDirection: 'column',
+          alignItems: 'center',
+          paddingTop: '5vh',
         }}
       >
-        <Input placeholder="Search for any IP address or domain" />
+        <Title
+          text="IP Address Tracker"
+          styleSheet={{ color: theme.colors.white }}
+        />
         <Box
           styleSheet={{
-            width: '60px',
-            height: '60px',
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'black',
-            borderRadius: '0px 15px 15px 0px',
+            marginTop: '10px',
           }}
         >
-          <Image src={IconArrow} alt="icon arrow" />
+          <Input
+            placeholder="Search for any IP address or domain"
+            onChange={state.handleChange}
+            value={state.inputValue}
+          />
+          <ButtonSearch
+            disabled={state.disabledButton}
+            onClick={state.handleOnClick}
+          />
         </Box>
       </Box>
-    </Box>
+      {state.errorMessage !== null && (
+        <BoxMessage message={state.errorMessage} onClose={state.onCloseModal} />
+      )}
+    </>
   );
 }
