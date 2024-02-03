@@ -56,7 +56,7 @@ export default function BoxMessage({
         >
           {message}
         </Box>
-        <Button onClick={onClose}>Fechar</Button>
+        <Button onClick={onClose}>Close</Button>
       </Box>
     </Box>
   );

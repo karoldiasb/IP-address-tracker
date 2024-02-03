@@ -1,15 +1,19 @@
 import axios from '@src/config/ipifyConfig';
+import { ResponseApi } from './types';
 
 export async function getAddress(ip: string) {
   try {
-    const response = await axios.get('/api/v1', {
+    const response: ResponseApi = await axios.get('/api/v1', {
       params: {
         ipAddress: ip,
       },
     });
-    return response.data;
+
+    if (response.status === 200) {
+      return response.data;
+    }
+    return undefined;
   } catch (error) {
-    console.error('Error fetching data:', error);
     throw error;
   }
 }

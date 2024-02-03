@@ -1,9 +1,12 @@
 import theme from '@src/theme/theme';
 import { Box, BoxMessage, ButtonSearch, Input, Title } from '..';
 import { useHeaderState } from './hooks/useHeaderState';
+import { useContext } from 'react';
+import { HomePageContext } from '@src/pages/HomePage/config/domain/context';
 
 export default function Header() {
   const state = useHeaderState();
+  const homePageContext = useContext(HomePageContext);
 
   return (
     <>
@@ -36,6 +39,7 @@ export default function Header() {
           <ButtonSearch
             disabled={state.disabledButton}
             onClick={state.handleOnClick}
+            loading={homePageContext.loading}
           />
         </Box>
       </Box>

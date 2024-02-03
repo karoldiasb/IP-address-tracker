@@ -1,6 +1,8 @@
+import { HomePageContext } from '@src/pages/HomePage/config/domain/context';
 import { getAddress } from '@src/services/apiService';
+import { maskIp } from '@src/utils';
 import { AxiosError } from 'axios';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useContext, useState } from 'react';
 
 type Data = {
   code: number;
@@ -10,25 +12,40 @@ type Data = {
 export const useHeaderState = () => {
   const [inputValue, setInputValue] = useState('');
   const [disabledButton, setDisableButton] = useState(true);
-  const [errorMessage, setErrorMessage] = useState<string | null>(
-    'error message',
-  );
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const homePageContext = useContext(HomePageContext);
 
   const getData = async (ip: string) => {
     try {
+      homePageContext.setLoading(true);
       setErrorMessage(null);
-      // const ip = '192.212.174.101';
       const data = await getAddress(ip);
-      console.log(data);
+      if (data) {
+        const { ip, location } = data;
+        homePageContext.setAddress({
+          ip: ip,
+          location: `${location.city}, ${location.country} ${location.geonameId}`,
+          timezone: `UTC${location.timezone}`,
+          isp: data.isp,
+        });
+      }
     } catch (error) {
       const e = error as AxiosError;
-      console.log(e);
+      homePageContext.setAddress({
+        ip: undefined,
+        location: undefined,
+        timezone: undefined,
+        isp: undefined,
+      });
+
       if (e.response?.data) {
         const data = e.response.data as unknown as Data;
-        setErrorMessage(data.messages);
-      } else {
-        setErrorMessage(e.message);
+        return setErrorMessage(data.messages);
       }
+      setErrorMessage(e.message);
+    } finally {
+      homePageContext.setLoading(false);
     }
   };
 
@@ -39,15 +56,6 @@ export const useHeaderState = () => {
   const onCloseModal = () => {
     setErrorMessage(null);
   };
-
-  function maskIp(value: string) {
-    return value
-      .replace(/\D/g, '')
-      .replace(/(\d{3})(\d)/, '$1.$2')
-      .replace(/(\d{3})(\d)/, '$1.$2')
-      .replace(/(\d{3})(\d)/, '$1.$2')
-      .replace(/(\d{3})(\d)/, '$1');
-  }
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const maskedValue = maskIp(event.target.value);

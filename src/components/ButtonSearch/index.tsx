@@ -3,6 +3,8 @@ import { Box } from '..';
 import IconArrow from '@src/assets/icon-arrow.svg';
 import { ButtonSearchProps } from './types';
 import theme from '@src/theme/theme';
+import Spinner from '@src/assets/spinner.svg';
+import { Rotate } from './style';
 
 export default function ButtonSearch({ ...props }: ButtonSearchProps) {
   return (
@@ -22,7 +24,13 @@ export default function ButtonSearch({ ...props }: ButtonSearchProps) {
       }}
       {...props}
     >
-      <Image src={IconArrow} alt="icon arrow" />
+      {props.loading ? (
+        <Rotate>
+          <Image src={Spinner} alt="spinner" />
+        </Rotate>
+      ) : (
+        <Image src={IconArrow} alt="icon arrow" />
+      )}
     </Box>
   );
 }

@@ -1,9 +1,18 @@
-import { infosAddressMock } from '@src/pages/mocks/infosAddressMock';
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { Box, BoxTitle, Divider } from '..';
 import theme from '@src/theme/theme';
+import { HomePageContext } from '@src/pages/HomePage/config/domain/context';
+import { getAddressData } from './addressData';
 
 export default function AddressDetails() {
+  const homePageContext = useContext(HomePageContext);
+
+  const { address } = homePageContext;
+
+  const addressData = getAddressData(address);
+
+  if (!address.ip) return null;
+
   return (
     <Box
       styleSheet={{
@@ -21,13 +30,13 @@ export default function AddressDetails() {
         zIndex: 999,
       }}
     >
-      {infosAddressMock.map((info, index) => {
-        const lastInfo = infosAddressMock.length - 1;
+      {addressData.map((info, index) => {
+        const lastInfo = addressData.length - 1;
         return (
           <Fragment key={info.mainTitle}>
             <BoxTitle
               mainTitle={info.mainTitle}
-              secondaryTitle={info.secondaryTitle}
+              secondaryTitle={info.secondaryTitle ?? ''}
             />
             {index !== lastInfo && <Divider />}
           </Fragment>
