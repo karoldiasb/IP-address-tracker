@@ -12,10 +12,9 @@ export default function Input({ ...props }: InputProps) {
         backgroundColor: theme.colors.white,
         color: theme.colors.black[500],
         borderRadius: '15px 0px 0px 15px',
-        fontFamily: theme.typography.fontFamily,
-        fontSize: '18px',
         paddingLeft: '20px',
         outline: 'none',
+        ...theme.typography.variants['heading-medium'],
       }}
       {...props}
     ></Box>

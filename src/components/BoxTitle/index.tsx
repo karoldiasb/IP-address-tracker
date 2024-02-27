@@ -15,17 +15,14 @@ export default function BoxTitle({ mainTitle, secondaryTitle }: BoxTitleProps) {
       <Text
         styleSheet={{
           color: 'grey',
-          fontSize: '10px',
-          fontWeight: 500,
           textTransform: 'uppercase',
         }}
+        variant="xs-medium"
       >
         {mainTitle}
       </Text>
       <Text
         styleSheet={{
-          fontSize: '18px',
-          fontWeight: 700,
           maxHeight: '68px',
           overflow: 'hidden',
         }}

@@ -1,21 +1,29 @@
 import theme from '@src/theme/theme';
-import { Box } from '..';
 import { TextProps } from './types';
+import { BaseComponent } from '@src/theme/baseComponent';
 
-export default function Text({ styleSheet, children, ...props}: TextProps) {
+export default function Text({
+  styleSheet,
+  variant,
+  children,
+  ...props
+}: TextProps) {
+  const textVariant = theme.typography.variants[variant ?? 'md-bold'];
   return (
-    <Box
-      styleSheet={{
+    <BaseComponent
+      $styleSheet={{
         fontFamily: theme.typography.fontFamily,
+        ...textVariant,
         ...styleSheet,
       }}
       {...props}
     >
       {children}
-    </Box>
+    </BaseComponent>
   );
 }
 
 Text.defaultProps = {
   tag: 'p',
+  variant: 'md-bold',
 };

@@ -13,6 +13,7 @@ export default function Footer() {
         styleSheet={{
           display: 'block',
         }}
+        variant="sm-regular"
       >
         Challenge by{' '}
         <a

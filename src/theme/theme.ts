@@ -1,17 +1,11 @@
+import { colors } from './defaults/colors';
+import { typography } from './defaults/typography';
+
 const theme = {
-  typography: {
-    fontFamily: "'Rubik', sans-serif",
-  },
-  colors: {
-    neutral: {
-      300: '#A6A6A6',
-      500: '#737373',
-    },
-    black: {
-      500: '#000000',
-    },
-    white: '#ffffff',
-  },
+  typography,
+  colors,
 };
+
+export type ThemeTypographyVariants = keyof typeof typography.variants;
 
 export default theme;
