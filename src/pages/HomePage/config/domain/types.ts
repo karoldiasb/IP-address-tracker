@@ -1,15 +1,15 @@
-import { Dispatch, SetStateAction } from 'react';
-
 export interface AddressState {
   ip?: string;
   location?: string;
   timezone?: string;
   isp?: string;
+  lat?: number;
+  lng?: number;
 }
 
 export interface HomePageState {
   address: AddressState;
-  setAddress: Dispatch<SetStateAction<AddressState | undefined>>;
+  setAddress: (address: AddressState) => void;
   loading: boolean;
-  setLoading: Dispatch<SetStateAction<boolean>>;
+  setLoading: (loading: boolean) => void;
 }
