@@ -7,7 +7,7 @@ export default function BoxTitle({ mainTitle, secondaryTitle }: BoxTitleProps) {
       styleSheet={{
         flexDirection: 'column',
         gap: '10px',
-        maxWidth: '170px',
+        maxWidth: '180px',
         paddingRight: '20px',
         paddingLeft: '15px',
       }}
@@ -26,6 +26,8 @@ export default function BoxTitle({ mainTitle, secondaryTitle }: BoxTitleProps) {
         styleSheet={{
           fontSize: '18px',
           fontWeight: 700,
+          maxHeight: '68px',
+          overflow: 'hidden',
         }}
       >
         {secondaryTitle}

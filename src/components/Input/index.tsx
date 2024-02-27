@@ -1,10 +1,12 @@
 import theme from '@src/theme/theme';
 import { InputProps } from './types';
+import { Box } from '..';
 
 export default function Input({ ...props }: InputProps) {
   return (
-    <input
-      style={{
+    <Box
+      tag="input"
+      styleSheet={{
         width: '500px',
         height: '60px',
         backgroundColor: theme.colors.white,
@@ -16,7 +18,7 @@ export default function Input({ ...props }: InputProps) {
         outline: 'none',
       }}
       {...props}
-    ></input>
+    ></Box>
   );
 }
 

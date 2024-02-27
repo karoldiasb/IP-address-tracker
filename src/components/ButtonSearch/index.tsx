@@ -6,7 +6,7 @@ import theme from '@src/theme/theme';
 import Spinner from '@src/assets/spinner.svg';
 import { Rotate } from './style';
 
-export default function ButtonSearch({ ...props }: ButtonSearchProps) {
+export default function ButtonSearch({ loading, ...props }: ButtonSearchProps) {
   return (
     <Box
       tag="button"
@@ -24,7 +24,7 @@ export default function ButtonSearch({ ...props }: ButtonSearchProps) {
       }}
       {...props}
     >
-      {props.loading ? (
+      {loading ? (
         <Rotate>
           <Image src={Spinner} alt="spinner" />
         </Rotate>
@@ -34,3 +34,7 @@ export default function ButtonSearch({ ...props }: ButtonSearchProps) {
     </Box>
   );
 }
+
+ButtonSearch.defaultProps = {
+  loading: false,
+};
