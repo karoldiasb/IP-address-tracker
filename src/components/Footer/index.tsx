@@ -9,7 +9,11 @@ export default function Footer() {
         justifyContent: 'center',
       }}
     >
-      <Text>
+      <Text
+        styleSheet={{
+          display: 'block',
+        }}
+      >
         Challenge by{' '}
         <a
           href="https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0"
