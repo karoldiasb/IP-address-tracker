@@ -2,7 +2,7 @@ import { HomePageContext } from '@src/pages/HomePage/config/domain/context';
 import { getAddress } from '@src/services/apiService';
 import { maskIp } from '@src/utils';
 import { AxiosError } from 'axios';
-import { ChangeEvent, useContext, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 
 type Data = {
   code: number;
@@ -21,6 +21,7 @@ export const useHeaderState = () => {
       homePageContext.setLoading(true);
       setErrorMessage(null);
       const data = await getAddress(ip);
+
       if (data) {
         const { ip, location } = data;
         homePageContext.setAddress({
@@ -28,6 +29,8 @@ export const useHeaderState = () => {
           location: `${location.city}, ${location.country} ${location.geonameId}`,
           timezone: `UTC${location.timezone}`,
           isp: data.isp,
+          lat: location.lat,
+          lng: location.lng,
         });
       }
     } catch (error) {
@@ -52,6 +55,11 @@ export const useHeaderState = () => {
   const handleOnClick = async () => {
     await getData(inputValue);
   };
+
+  useEffect(() => {
+    const initialIP = '192.101.102.201';
+    getData(initialIP);
+  }, []);
 
   const onCloseModal = () => {
     setErrorMessage(null);
