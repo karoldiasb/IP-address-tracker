@@ -7,6 +7,8 @@ export const useHomePageState = () => {
     location: undefined,
     timezone: undefined,
     isp: undefined,
+    lat: undefined,
+    lng: undefined,
   });
 
   const [loading, setLoading] = useState(false);
