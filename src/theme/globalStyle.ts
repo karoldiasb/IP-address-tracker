@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     // [NextJS Reset]
@@ -14,14 +14,7 @@ const GlobalStyle = createGlobalStyle`
     }
     #__next {
         width: 100%;
-        overflow: hidden;
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-content: flex-start;
-        flex-shrink: 0;
+       
     }
     // [Reset Styles]
     * {

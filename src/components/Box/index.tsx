@@ -1,11 +1,15 @@
 import { BaseComponent } from '@src/theme/baseComponent';
 import { BoxProps } from './types';
 
-export default function Box({ tag, styleSheet, children, ...props }: BoxProps) {
-  const Tag = tag || 'div';
-
+export default function Box({ styleSheet, children, ...props }: BoxProps) {
   return (
-    <BaseComponent as={Tag} $styleSheet={styleSheet} {...props}>
+    <BaseComponent
+      $styleSheet={{
+        display: 'flex',
+        ...styleSheet,
+      }}
+      {...props}
+    >
       {children}
     </BaseComponent>
   );

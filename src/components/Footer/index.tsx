@@ -1,10 +1,12 @@
+import { BaseComponent } from '@src/theme/baseComponent';
 import { Box, Text } from '..';
 
 export default function Footer() {
   return (
-    <Box
+    <BaseComponent
       tag="footer"
-      styleSheet={{
+      $styleSheet={{
+        display: 'flex',
         height: '20px',
         justifyContent: 'center',
       }}
@@ -16,18 +18,23 @@ export default function Footer() {
         variant="sm-regular"
       >
         Challenge by{' '}
-        <a
+        <BaseComponent
+          tag="a"
           href="https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0"
           target="_blank"
         >
           Frontend Mentor
-        </a>
+        </BaseComponent>
         . Coded by{' '}
-        <a href="https://github.com/karoldiasb" target="_blank">
+        <BaseComponent
+          tag="a"
+          href="https://github.com/karoldiasb"
+          target="_blank"
+        >
           Karoline Barreto
-        </a>
+        </BaseComponent>
         .
       </Text>
-    </Box>
+    </BaseComponent>
   );
 }

@@ -1,12 +1,12 @@
 import theme from '@src/theme/theme';
-import { Box } from '..';
 import { ButtonProps } from './types';
+import { BaseComponent } from '@src/theme/baseComponent';
 
 export default function Button({ children, ...props }: ButtonProps) {
   return (
-    <Box
+    <BaseComponent
       tag="button"
-      styleSheet={{
+      $styleSheet={{
         width: '130px',
         height: '40px',
         display: 'flex',
@@ -20,6 +20,6 @@ export default function Button({ children, ...props }: ButtonProps) {
       {...props}
     >
       {children}
-    </Box>
+    </BaseComponent>
   );
 }

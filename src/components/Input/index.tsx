@@ -1,12 +1,12 @@
 import theme from '@src/theme/theme';
 import { InputProps } from './types';
-import { Box } from '..';
+import { BaseComponent } from '@src/theme/baseComponent';
 
 export default function Input({ ...props }: InputProps) {
   return (
-    <Box
+    <BaseComponent
       tag="input"
-      styleSheet={{
+      $styleSheet={{
         width: '500px',
         height: '60px',
         backgroundColor: theme.colors.white,
@@ -17,7 +17,7 @@ export default function Input({ ...props }: InputProps) {
         ...theme.typography.variants['heading-medium'],
       }}
       {...props}
-    ></Box>
+    ></BaseComponent>
   );
 }
 

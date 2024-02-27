@@ -1,16 +1,16 @@
 import Image from 'next/image';
-import { Box } from '..';
 import IconArrow from '@src/assets/icon-arrow.svg';
 import { ButtonSearchProps } from './types';
 import theme from '@src/theme/theme';
 import Spinner from '@src/assets/spinner.svg';
 import { Rotate } from './style';
+import { BaseComponent } from '@src/theme/baseComponent';
 
 export default function ButtonSearch({ loading, ...props }: ButtonSearchProps) {
   return (
-    <Box
+    <BaseComponent
       tag="button"
-      styleSheet={{
+      $styleSheet={{
         width: '60px',
         height: '60px',
         display: 'flex',
@@ -31,7 +31,7 @@ export default function ButtonSearch({ loading, ...props }: ButtonSearchProps) {
       ) : (
         <Image src={IconArrow} alt="icon arrow" />
       )}
-    </Box>
+    </BaseComponent>
   );
 }
 
