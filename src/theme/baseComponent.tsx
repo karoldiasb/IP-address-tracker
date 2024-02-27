@@ -9,7 +9,6 @@ interface StyledBaseComponentProps {
 
 const StyledBaseComponent = styled.div<StyledBaseComponentProps>`
   display: flex;
-  flex-shrink: 0;
   ${({ $styleSheet }) => parseStyleSheet($styleSheet)}
 `;
 
@@ -18,5 +17,5 @@ export const BaseComponent = (props: any) => {
 };
 
 StyledBaseComponent.defaultProps = {
-  $styleSheet: {}
-}
+  $styleSheet: {},
+};
