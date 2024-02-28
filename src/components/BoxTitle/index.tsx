@@ -7,7 +7,8 @@ export default function BoxTitle({ mainTitle, secondaryTitle }: BoxTitleProps) {
       styleSheet={{
         flexDirection: 'column',
         gap: '10px',
-        maxWidth: '180px',
+        maxWidth: '220px',
+        minWidth: '190px',
         paddingRight: '20px',
         paddingLeft: '15px',
       }}
