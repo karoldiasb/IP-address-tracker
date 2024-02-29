@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_IPIFY_URL,
+  baseURL: process.env.NEXT_PUBLIC_API_IPIFY_GEOLOCATION_URL,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -11,7 +11,7 @@ instance.interceptors.request.use(
   (config) => {
     config.params = {
       ...config.params,
-      apiKey: process.env.NEXT_PUBLIC_API_IPIFY_KEY,
+      apiKey: process.env.NEXT_PUBLIC_API_IPIFY_GEOLOCATION_KEY,
     };
     return config;
   },

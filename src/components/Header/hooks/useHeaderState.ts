@@ -1,5 +1,5 @@
 import { HomePageContext } from '@src/config/domain/context';
-import { getAddress } from '@src/services/apiService';
+import { getAddress, getIP } from '@src/services/apiService';
 import { maskIp } from '@src/utils';
 import { AxiosError } from 'axios';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
@@ -56,9 +56,19 @@ export const useHeaderState = () => {
     await getData(inputValue);
   };
 
+  const getPublicIp = async () => {
+    const ip = await getIP();
+    return ip;
+  };
+
   useEffect(() => {
-    const initialIP = '192.101.102.201';
-    getData(initialIP);
+    async function fetchData() {
+      const ip = await getPublicIp();
+      const initialIP = ip ?? '192.101.102.201';
+      getData(initialIP);
+    }
+
+    fetchData();
   }, []);
 
   const onCloseModal = () => {
