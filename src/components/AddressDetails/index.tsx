@@ -1,7 +1,7 @@
 import { Fragment, useContext } from 'react';
 import { Box, BoxTitle, Divider } from '..';
 import theme from '@src/theme/theme';
-import { HomePageContext } from '@src/pages/HomePage/config/domain/context';
+import { HomePageContext } from '@src/config/domain/context';
 import { getAddressData } from './addressData';
 import { useMediaQuery } from 'react-responsive';
 

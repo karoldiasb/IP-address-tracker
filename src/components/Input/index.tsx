@@ -17,7 +17,7 @@ export default function Input({ ...props }: InputProps) {
         ...theme.typography.variants['sm-regular'],
       }}
       {...props}
-    ></BaseComponent>
+    />
   );
 }
 

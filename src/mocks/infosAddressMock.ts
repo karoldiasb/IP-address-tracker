@@ -1,4 +1,4 @@
-import { BoxTitleProps } from '../../components/BoxTitle/types';
+import { BoxTitleProps } from '../components/BoxTitle/types';
 
 export const infosAddressMock: BoxTitleProps[] = [
   {

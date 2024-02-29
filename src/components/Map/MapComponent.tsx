@@ -4,7 +4,7 @@ import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import L, { LatLngExpression } from 'leaflet';
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
 import { useContext, useEffect, useState } from 'react';
-import { HomePageContext } from '@src/pages/HomePage/config/domain/context';
+import { HomePageContext } from '@src/config/domain/context';
 
 export default function Map() {
   const initialPosition = [24.8831, 67.1469];

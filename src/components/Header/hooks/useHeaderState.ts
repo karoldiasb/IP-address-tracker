@@ -1,4 +1,4 @@
-import { HomePageContext } from '@src/pages/HomePage/config/domain/context';
+import { HomePageContext } from '@src/config/domain/context';
 import { getAddress } from '@src/services/apiService';
 import { maskIp } from '@src/utils';
 import { AxiosError } from 'axios';

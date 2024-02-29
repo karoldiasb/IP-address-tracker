@@ -1,4 +1,4 @@
-import { AddressState } from '@src/pages/HomePage/config/domain/types';
+import { AddressState } from '@src/config/domain/types';
 
 export const getAddressData = (address: AddressState) => {
   return [

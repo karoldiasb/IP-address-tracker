@@ -2,7 +2,7 @@ import theme from '@src/theme/theme';
 import { Box, BoxMessage, ButtonSearch, Input, Title } from '..';
 import { useHeaderState } from './hooks/useHeaderState';
 import { useContext } from 'react';
-import { HomePageContext } from '@src/pages/HomePage/config/domain/context';
+import { HomePageContext } from '@src/config/domain/context';
 
 export default function Header() {
   const state = useHeaderState();
