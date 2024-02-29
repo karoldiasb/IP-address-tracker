@@ -3,7 +3,7 @@ import { Box, BoxTitle, Divider } from '..';
 import theme from '@src/theme/theme';
 import { HomePageContext } from '@src/config/domain/context';
 import { getAddressData } from './addressData';
-import { useMediaQuery } from 'react-responsive';
+import { useMobileSize } from '@src/hooks/useMobileSize';
 
 export default function AddressDetails() {
   const homePageContext = useContext(HomePageContext);
@@ -12,7 +12,7 @@ export default function AddressDetails() {
 
   const addressData = getAddressData(address);
 
-  const isMobileDevice = useMediaQuery({ query: '(max-width: 998px)' });
+  const isMobileDevice = useMobileSize();
 
   if (!address.ip) return null;
 

@@ -3,15 +3,22 @@ import { Box, BoxMessage, ButtonSearch, Input, Title } from '..';
 import { useHeaderState } from './hooks/useHeaderState';
 import { useContext } from 'react';
 import { HomePageContext } from '@src/config/domain/context';
+import { useMobileSize } from '@src/hooks/useMobileSize';
 
 export default function Header() {
   const state = useHeaderState();
   const homePageContext = useContext(HomePageContext);
+
+  const isMobileDevice = useMobileSize();
+  const urlBackgroundImage = isMobileDevice
+    ? 'pattern-bg-mobile.png'
+    : 'pattern-bg-desktop.png';
+
   return (
     <>
       <Box
         styleSheet={{
-          backgroundImage: `url(/pattern-bg-desktop.png)`,
+          backgroundImage: `url(/${urlBackgroundImage})`,
           backgroundSize: '100% 274px',
           backgroundRepeat: 'no-repeat',
           display: 'flex',
