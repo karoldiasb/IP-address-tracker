@@ -19,12 +19,15 @@ export default function Header() {
       <Box
         styleSheet={{
           backgroundImage: `url(/${urlBackgroundImage})`,
-          backgroundSize: '100% 274px',
+          backgroundSize: {
+            xs: '100% 300px',
+            lg: '100% 280px',
+          },
           backgroundRepeat: 'no-repeat',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          paddingTop: '5vh',
+          paddingTop: '24px',
         }}
       >
         <Title
@@ -34,7 +37,9 @@ export default function Header() {
         <Box
           styleSheet={{
             display: 'flex',
-            marginTop: '10px',
+            marginTop: '23px',
+            marginLeft: { xs: '24px', lg: '165px' },
+            marginRight: { xs: '24px', lg: '165px' },
           }}
         >
           <Input

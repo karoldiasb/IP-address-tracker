@@ -12,7 +12,10 @@ export default function HomePage() {
         tag="main"
         $styleSheet={{
           display: 'grid',
-          gridTemplateRows: '274px calc(100vh - 294px)',
+          gridTemplateRows: {
+            xs: '300px calc(100vh - 320px)',
+            lg: '280px calc(100vh - 300px)',
+          },
         }}
       >
         <Header />

@@ -8,38 +8,38 @@ export const typography = {
   fontFamily: "'Rubik', sans-serif",
   variants: {
     'display-bold': {
-      fontWeight: fontWeights.extrabold,
+      fontWeight: fontWeights.medium,
       fontSize: {
         xs: '28px',
-        md: '38px',
+        lg: '38px',
       },
     },
     'heading-medium': {
       fontWeight: fontWeights.medium,
       fontSize: {
         xs: '18px',
-        md: '18px',
+        lg: '25px',
       },
     },
     'md-bold': {
-      fontWeight: fontWeights.extrabold,
+      fontWeight: fontWeights.medium,
       fontSize: {
         xs: '18px',
-        md: '18px',
+        lg: '25px',
       },
     },
     'sm-regular': {
       fontWeight: fontWeights.normal,
       fontSize: {
         xs: '15px',
-        md: '15px',
+        lg: '15px',
       },
     },
-    'xs-medium': {
-      fontWeight: fontWeights.medium,
+    'xs-extrabold': {
+      fontWeight: fontWeights.extrabold,
       fontSize: {
         xs: '10px',
-        md: '10px',
+        lg: '10px',
       },
     },
   },

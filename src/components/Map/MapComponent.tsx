@@ -1,10 +1,9 @@
 import 'leaflet/dist/leaflet.css';
-import 'leaflet-defaulticon-compatibility';
-import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
-import L, { LatLngExpression } from 'leaflet';
-import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
+import { LatLngExpression, Icon } from 'leaflet';
+import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import { useContext, useEffect, useState } from 'react';
 import { HomePageContext } from '@src/config/domain/context';
+import IconLocation from '@src/assets/icon-location.svg';
 
 export default function Map() {
   const initialPosition = [24.8831, 67.1469];
@@ -18,6 +17,11 @@ export default function Map() {
     }
   }, [address.lat, address.lng]);
 
+  const icon = new Icon({
+    iconUrl: IconLocation.src,
+    iconSize: [47, 57],
+  });
+
   return (
     <MapContainer
       key={position[0].toString()}
@@ -29,7 +33,7 @@ export default function Map() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={position as LatLngExpression} />
+      <Marker position={position as LatLngExpression} icon={icon} />
     </MapContainer>
   );
 }

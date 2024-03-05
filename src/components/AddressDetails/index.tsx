@@ -19,21 +19,22 @@ export default function AddressDetails() {
   return (
     <Box
       styleSheet={{
-        height: { xs: 'auto', lg: '140px' },
-        minWidth: { xs: '250px', lg: '900px' },
+        height: { xs: 'auto', lg: '161px' },
+        width: { xs: '329px', lg: '1110px' },
         background: theme.colors.white,
         position: 'absolute',
-        top: '200px',
+        top: { xs: '166px', lg: '200px' },
         display: 'flex',
         flexDirection: { xs: 'column', lg: 'row' },
         justifySelf: 'center',
         alignItems: { xs: 'center', lg: 'flex-start' },
         textAlign: { xs: 'center', lg: 'left' },
         borderRadius: '15px',
-        paddingTop: '30px',
-        paddingBottom: '30px',
-        paddingLeft: '10px',
-        gap: '10px',
+        paddingTop: '26px',
+        paddingBottom: { xs: '25px', lg: '44px' },
+        gap: { xs: '30px', lg: '10px' },
+        marginLeft: { xs: '24px', lg: '165px' },
+        marginRight: { xs: '24px', lg: '165px' },
         zIndex: 999,
       }}
     >

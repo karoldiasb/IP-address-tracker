@@ -11,7 +11,7 @@ export default function ButtonSearch({ loading, ...props }: ButtonSearchProps) {
     <BaseComponent
       tag="button"
       $styleSheet={{
-        width: '60px',
+        width: '66px',
         height: '60px',
         display: 'flex',
         alignItems: 'center',

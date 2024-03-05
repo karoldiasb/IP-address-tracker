@@ -1,3 +1,4 @@
+import theme from '@src/theme/theme';
 import { Box, Text } from '..';
 import { BoxTitleProps } from './types';
 
@@ -6,26 +7,26 @@ export default function BoxTitle({ mainTitle, secondaryTitle }: BoxTitleProps) {
     <Box
       styleSheet={{
         flexDirection: 'column',
-        gap: '10px',
-        maxWidth: '220px',
-        minWidth: '190px',
-        paddingRight: '20px',
-        paddingLeft: '15px',
+        gap: { xs: '12px', lg: '17px' },
+        minWidth: '243px',
+        paddingLeft: { xs: '0', lg: '30px' },
       }}
     >
       <Text
         styleSheet={{
-          color: 'grey',
+          color: theme.colors.neutral[300],
           textTransform: 'uppercase',
         }}
-        variant="xs-medium"
+        variant="xs-extrabold"
       >
         {mainTitle}
       </Text>
       <Text
         styleSheet={{
-          maxHeight: '68px',
           overflow: 'hidden',
+          maxHeight: { xs: '100%', lg: '60px' },
+          maxWidth: { xs: '100%', lg: '190px' },
+          color: theme.colors.black[400],
         }}
       >
         {secondaryTitle}
