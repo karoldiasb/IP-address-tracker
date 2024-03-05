@@ -4,9 +4,13 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 
 ## Overview
 
-### Link
+### Links
 
 https://ip-address-tracker-karoldiasb.vercel.app/
+
+#### Figma
+
+https://www.figma.com/file/miJb5KbKAXapnJlQQQpJQc/ip-address-tracker?type=design&node-id=11%3A59&mode=design&t=1i50hoLvwFhMIx5U-1
 
 ### The challenge
 
@@ -26,8 +30,9 @@ Users should be able to:
 
 ### Built with
 
-- [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
+- [React](https://reactjs.org/) - JS library
+- [useContext](https://react.dev/reference/react/useContext) - For state management
 - [Styled Components](https://styled-components.com/) - For styles
 
 ## Getting Started
