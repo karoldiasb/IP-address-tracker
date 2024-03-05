@@ -34,7 +34,8 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [useContext](https://react.dev/reference/react/useContext) - For state management
 - [Styled Components](https://styled-components.com/) - For styles
-
+- Theme structure usage with an abstraction of a BaseComponent to be reused by other components
+   
 ## Getting Started
 
 First, install dependencies:
