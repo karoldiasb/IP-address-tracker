@@ -7,6 +7,8 @@ export default function BoxMessage({
   message,
   onClose,
 }: BoxMessageProps) {
+  if (!message?.trim()) return null;
+
   return (
     <Box
       styleSheet={{
@@ -18,6 +20,7 @@ export default function BoxMessage({
         height: '100%',
         backgroundColor: 'rgba(0,0,0,0.4)',
       }}
+      data-testid="modal-message"
     >
       <Box
         styleSheet={{

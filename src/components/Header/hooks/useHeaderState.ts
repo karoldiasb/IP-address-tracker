@@ -12,14 +12,16 @@ type Data = {
 export const useHeaderState = () => {
   const [inputValue, setInputValue] = useState('');
   const [disabledButton, setDisableButton] = useState(true);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | undefined>(
+    undefined,
+  );
 
   const homePageContext = useContext(HomePageContext);
 
   const getData = async (ip: string) => {
     try {
       homePageContext.setLoading(true);
-      setErrorMessage(null);
+      setErrorMessage(undefined);
       const data = await getAddress(ip);
 
       if (data) {
@@ -72,7 +74,7 @@ export const useHeaderState = () => {
   }, []);
 
   const onCloseModal = () => {
-    setErrorMessage(null);
+    setErrorMessage(undefined);
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
