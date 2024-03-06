@@ -23,6 +23,7 @@ export default function ButtonSearch({ loading, ...props }: ButtonSearchProps) {
         borderRadius: '0px 15px 15px 0px',
       }}
       {...props}
+      data-testid="button-search"
     >
       {loading ? (
         <Rotate>

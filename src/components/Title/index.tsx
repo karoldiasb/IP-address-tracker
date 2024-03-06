@@ -3,7 +3,7 @@ import { Text } from '..';
 
 export default function Title({ text, ...props }: TitleProps) {
   return (
-    <Text tag="h1" variant="display-bold" {...props}>
+    <Text tag="h1" variant="display-bold" {...props} data-testid="title">
       {text}
     </Text>
   );
