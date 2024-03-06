@@ -54,9 +54,7 @@ export default function Header() {
           />
         </Box>
       </Box>
-      {state.errorMessage !== null && (
-        <BoxMessage message={state.errorMessage} onClose={state.onCloseModal} />
-      )}
+      <BoxMessage message={state.errorMessage} onClose={state.onCloseModal} />
     </>
   );
 }
